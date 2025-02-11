@@ -1,6 +1,7 @@
 import { useItemContext } from '@/context/items-provider';
 import { IconProp } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from "@fortawesome/free-solid-svg-icons"
 import React from 'react';
 
 interface Props {
@@ -34,7 +35,7 @@ const ListItem = ({ item, index } : Props) => {
                         <text className={`font-mono text-lg ml-4 ${urgencyColor(item.urgency)}`}>{item.urgency}</text>
                 }
                 <button className="" onClick={() => deleteItem(index)}>
-                    <text className="font-bold text-primary60">x</text>
+                        <FontAwesomeIcon icon={faTrash} color="#575757"/>
                 </button>
                 </div>
             </div>
