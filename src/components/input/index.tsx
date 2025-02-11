@@ -5,11 +5,7 @@ import Button from './button';
 import Dropdown from './dropdown';
 import { useItemContext } from '@/context/items-provider';
 
-interface Props {
-    onSubmit: (item: string) => void;
-};
-
-const Form = ({ onSubmit } : Props) => {
+const Form = () => {
     const { newItem } = useItemContext()
 
     const [item, setItem] = useState("");

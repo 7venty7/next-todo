@@ -1,6 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconProp } from '@fortawesome/fontawesome-svg-core';
 
 interface Props {
     onPress: (e : React.MouseEvent<HTMLButtonElement>) => void;
@@ -8,7 +6,6 @@ interface Props {
 
 const Button = ({ onPress } : Props) => {
     return (
-        <>
             <button 
                 type="button"
                 onClick={onPress}
@@ -16,7 +13,6 @@ const Button = ({ onPress } : Props) => {
             >
                 <text className="text-xl font-extrabold text-primary20">+</text>
             </button>
-        </>
     )
 };
 

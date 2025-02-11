@@ -8,7 +8,6 @@ interface Props {
 const Dropdown = ({ onSelect, value } : Props) => {
     const options = [1, 2, 3]
     return (
-        <>
             <select value={value} className="h-10 px-2 rounded-xl bg-primary20" onChange={onSelect}>
                 <option value="" hidden disabled className="text-mono text-white">Urgency</option>
                 {
@@ -19,7 +18,6 @@ const Dropdown = ({ onSelect, value } : Props) => {
                     })
                 }
             </select>
-        </>
     )
 };
 
