@@ -1,23 +1,20 @@
+'use client'
 import React from 'react';
 import ListItem from './item';
+import { useItemContext } from '@/context/items-provider';
 
-interface Props {
-    data: ListItemData[];
-}
-
-const ItemsList = ({ data } : Props) => {
+const ItemsList = () => {
+    const { items } = useItemContext()
     return (
-        <>
-            <div className="flex-col flex justify-center w-full">
+            <div className="">
                 {
-                    data.map((item, index) => {
+                    items.map((item, index) => {
                         return (
-                        <ListItem name={item.name} urgency={item.urgency} />
+                            <ListItem item={item} index={index} key={index} />
                         )
                     })
                 }
             </div>
-        </>
     )
 };
 

@@ -24,8 +24,8 @@ export const ItemProvider = ({ children } : any) => {
     }
 
     React.useEffect(() => {
-        setItems([]);
-    }, []);
+        console.log(items)
+    }, [items]);
 
     const values = {
         items,

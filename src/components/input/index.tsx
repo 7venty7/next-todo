@@ -2,19 +2,28 @@
 import React, { useState } from 'react';
 import TextInput from './text-input';
 import Button from './button';
+import Dropdown from './dropdown';
+import { useItemContext } from '@/context/items-provider';
 
 interface Props {
     onSubmit: (item: string) => void;
 };
 
 const Form = ({ onSubmit } : Props) => {
+    const { newItem } = useItemContext()
 
     const [item, setItem] = useState("");
+    const [urgency, setUrgency] = useState("")
 
     return (
-        <div className="flex-row flex space-x-2 items-center w-[30vw]">
+        <div className="flex-row flex space-x-2 items-center w-full">
             <TextInput value={item} onChange={(e) => setItem(e.target.value)} />
-            <Button onPress={(e) => onSubmit(item)}/>
+            <Dropdown onSelect={(e) => setUrgency(e.target.value)} value={urgency} />
+            <Button onPress={(e) => {
+                newItem(item, parseInt(urgency))
+                setItem("")
+                setUrgency("")
+            }}/>
         </div>
     )
 };
